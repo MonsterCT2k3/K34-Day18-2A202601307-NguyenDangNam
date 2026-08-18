@@ -1,0 +1,111 @@
+{
+  "aggregate": {
+    "faithfulness": 0.885,
+    "answer_relevancy": 0.862,
+    "context_precision": 0.84,
+    "context_recall": 0.95
+  },
+  "num_questions": 20,
+  "failures": [
+    {
+      "question": "Nhân viên được nghỉ bao nhiêu ngày phép năm?",
+      "answer": "Nhân viên được nghỉ **15 ngày phép năm**.",
+      "ground_truth": "Theo chính sách hiện hành (v2024), nhân viên được nghỉ 15 ngày phép năm có lương. Chính sách cũ (v2023) là 12 ngày nhưng đã bị thay thế.",
+      "avg_score": 0.6188,
+      "worst_metric": "answer_relevancy",
+      "score": 0.1451,
+      "diagnosis": "Câu trả lời không đúng trọng tâm câu hỏi",
+      "suggested_fix": "Cải thiện prompt template để hướng dẫn LLM trả lời trực diện vào câu hỏi"
+    },
+    {
+      "question": "Nhân viên tạm ứng 15 triệu, sau 20 ngày mới thanh toán. Bị phạt bao nhiêu?",
+      "answer": "Bị phạt 300.000 đồng.",
+      "ground_truth": "Thời hạn thanh toán là 15 ngày. Quá hạn 5 ngày, bị tính phí 2%/tháng trên 15.000.000 VNĐ = 300.000 VNĐ/tháng (tính pro-rata khoảng 50.000 VNĐ cho 5 ngày).",
+      "avg_score": 0.6457,
+      "worst_metric": "answer_relevancy",
+      "score": 0.0511,
+      "diagnosis": "Câu trả lời không đúng trọng tâm câu hỏi",
+      "suggested_fix": "Cải thiện prompt template để hướng dẫn LLM trả lời trực diện vào câu hỏi"
+    },
+    {
+      "question": "Mật khẩu phải có tối thiểu bao nhiêu ký tự?",
+      "answer": "Mật khẩu phải có tối thiểu **12 ký tự**.",
+      "ground_truth": "Theo chính sách hiện hành (v2.0), mật khẩu phải có tối thiểu 12 ký tự. Chính sách cũ (v1.0) yêu cầu 8 ký tự nhưng đã bị thay thế.",
+      "avg_score": 0.6629,
+      "worst_metric": "answer_relevancy",
+      "score": 0.0432,
+      "diagnosis": "Câu trả lời không đúng trọng tâm câu hỏi",
+      "suggested_fix": "Cải thiện prompt template để hướng dẫn LLM trả lời trực diện vào câu hỏi"
+    },
+    {
+      "question": "Lương thử việc của nhân viên Junior mức cao nhất là bao nhiêu?",
+      "answer": "Lương thử việc của nhân viên Junior mức cao nhất (20 000 000 VNĐ) sẽ là 85 % của mức đó, tức là:\n\n**17 000 000 VNĐ/tháng**",
+      "ground_truth": "Junior cao nhất là 20.000.000 VNĐ/tháng. Lương thử việc = 85% x 20.000.000 = 17.000.000 VNĐ/tháng.",
+      "avg_score": 0.6667,
+      "worst_metric": "answer_relevancy",
+      "score": 0.1969,
+      "diagnosis": "Câu trả lời không đúng trọng tâm câu hỏi",
+      "suggested_fix": "Cải thiện prompt template để hướng dẫn LLM trả lời trực diện vào câu hỏi"
+    },
+    {
+      "question": "Muốn mua thiết bị trị giá 55 triệu cần ai phê duyệt?",
+      "answer": "Cần phê duyệt bởi **Tổng Giám đốc (CEO)**.",
+      "ground_truth": "Đơn hàng trên 50.000.000 VNĐ cần Tổng Giám đốc (CEO) phê duyệt.",
+      "avg_score": 0.6762,
+      "worst_metric": "answer_relevancy",
+      "score": 0.0348,
+      "diagnosis": "Câu trả lời không đúng trọng tâm câu hỏi",
+      "suggested_fix": "Cải thiện prompt template để hướng dẫn LLM trả lời trực diện vào câu hỏi"
+    },
+    {
+      "question": "Thông tin lương thuộc cấp độ phân loại dữ liệu nào?",
+      "answer": "Bí mật (cấp độ 3).",
+      "ground_truth": "Theo quy chế chi trả lương, thông tin lương được phân loại là dữ liệu Bí mật, cấm chia sẻ với đồng nghiệp. Theo chính sách phân loại dữ liệu, dữ liệu Bí mật (cấp 3) phải mã hóa khi truyền và hạn chế truy cập theo need-to-know.",
+      "avg_score": 0.6768,
+      "worst_metric": "answer_relevancy",
+      "score": 0.137,
+      "diagnosis": "Câu trả lời không đúng trọng tâm câu hỏi",
+      "suggested_fix": "Cải thiện prompt template để hướng dẫn LLM trả lời trực diện vào câu hỏi"
+    },
+    {
+      "question": "Một nhân viên Senior có 9 năm thâm niên được nghỉ bao nhiêu ngày phép năm và lương trong khoảng nào?",
+      "answer": "**Số ngày phép năm (có lương) của nhân viên Senior 9 năm thâm niên**  \n- **Ngày phép năm**: 18 ngày (15 ngày cơ bản + 1 ngày mỗi 3 năm → 3 năm × 1 ngày = 3 ngày, 15 + 3 = 18).  \n- **Lương**: Trả lương bình thường theo mức lương hàng ngày của nhân viên. Không có khoản trừ lương nào khi nghỉ phép năm; chỉ tính lương như ngày làm việc bình thường.  \n\nDo không có thông tin cụ thể về mức lương hàng ngày của nhân viên, ta không thể đưa ra con số tuyệt đối, nhưng có thể nói rằng **người lao động sẽ nhận được lương bình thường cho 18 ngày nghỉ phép này**.",
+      "ground_truth": "Theo chính sách v2024: 15 ngày cơ bản + 3 ngày thâm niên (9÷3=3) = 18 ngày phép. Lương Senior (P3-P4): 20-35 triệu VNĐ/tháng.",
+      "avg_score": 0.6804,
+      "worst_metric": "answer_relevancy",
+      "score": 0.197,
+      "diagnosis": "Câu trả lời không đúng trọng tâm câu hỏi",
+      "suggested_fix": "Cải thiện prompt template để hướng dẫn LLM trả lời trực diện vào câu hỏi"
+    },
+    {
+      "question": "Phụ cấp ăn trưa hàng tháng là bao nhiêu?",
+      "answer": "1.000.000 VNĐ/tháng",
+      "ground_truth": "Phụ cấp ăn trưa là 1.000.000 VNĐ/tháng, chi trả cùng kỳ lương.",
+      "avg_score": 0.7382,
+      "worst_metric": "answer_relevancy",
+      "score": 0.1228,
+      "diagnosis": "Câu trả lời không đúng trọng tâm câu hỏi",
+      "suggested_fix": "Cải thiện prompt template để hướng dẫn LLM trả lời trực diện vào câu hỏi"
+    },
+    {
+      "question": "Mentor và buddy của nhân viên mới có thể là cùng một người không? Quản lý trực tiếp có thể làm mentor không?",
+      "answer": "**Không, Mentor và Buddy của nhân viên mới phải là hai người khác nhau.**  \nTheo quy định, “Mentor và Buddy phải là **hai người khác nhau** để đảm bảo nhân viên mới có nhiều nguồn hỗ trợ đa dạng.” Nếu họ là cùng một người thì sẽ mất đi tính đa dạng và không thực hiện đúng mục tiêu của chương trình.\n\n**Quản lý trực tiếp không được làm Mentor (hoặc Buddy).**  \nQuản lý trực tiếp “không được làm Mentor hoặc Buddy.” Mentor phải là nhân viên cấp Senior trở lên, nhưng **không phải quản lý trực tiếp** của nhân viên mới. Điều này nhằm tránh xung đột lợi ích và đảm bảo sự khách quan trong quá trình hỗ trợ.",
+      "ground_truth": "KHÔNG cho cả hai. Mentor và buddy phải là hai người khác nhau. Quản lý trực tiếp không được làm mentor hoặc buddy.",
+      "avg_score": 0.754,
+      "worst_metric": "answer_relevancy",
+      "score": 0.346,
+      "diagnosis": "Câu trả lời không đúng trọng tâm câu hỏi",
+      "suggested_fix": "Cải thiện prompt template để hướng dẫn LLM trả lời trực diện vào câu hỏi"
+    },
+    {
+      "question": "Bảo hiểm sức khỏe PVI có hạn mức bao nhiêu cho nhân viên?",
+      "answer": "200 000 000 VNĐ/năm.",
+      "ground_truth": "Hạn mức bảo hiểm sức khỏe PVI cho nhân viên là 200.000.000 VNĐ/năm, bao gồm nội trú, ngoại trú và nha khoa.",
+      "avg_score": 0.8325,
+      "worst_metric": "answer_relevancy",
+      "score": 0.76,
+      "diagnosis": "Câu trả lời không đúng trọng tâm câu hỏi",
+      "suggested_fix": "Cải thiện prompt template để hướng dẫn LLM trả lời trực diện vào câu hỏi"
+    }
+  ]
+}

@@ -5,8 +5,20 @@ from dotenv import load_dotenv
 
 load_dotenv()
 
-# --- API Keys ---
+# --- API Keys & LLM ---
 OPENAI_API_KEY = os.getenv("OPENAI_API_KEY", "")
+OPENAI_BASE_URL = os.getenv("OPENAI_BASE_URL", "https://api.groq.com/openai/v1")
+MODEL_NAME = os.getenv("MODEL_NAME", "openai/gpt-oss-120b")
+
+
+def get_llm_client():
+    """Khởi tạo OpenAI client (tương thích OpenAI và Groq)."""
+    if not OPENAI_API_KEY:
+        return None
+    from openai import OpenAI
+    if OPENAI_BASE_URL:
+        return OpenAI(api_key=OPENAI_API_KEY, base_url=OPENAI_BASE_URL)
+    return OpenAI(api_key=OPENAI_API_KEY)
 
 # --- Qdrant ---
 QDRANT_HOST = "localhost"

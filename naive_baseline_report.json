@@ -1,0 +1,10 @@
+{
+  "aggregate": {
+    "faithfulness": NaN,
+    "answer_relevancy": NaN,
+    "context_precision": NaN,
+    "context_recall": NaN
+  },
+  "num_questions": 20,
+  "failures": []
+}
